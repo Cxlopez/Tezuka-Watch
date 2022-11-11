@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import Cards from "./components/Cards";
 import Header from "./components/Header";
 
 function App() {
@@ -10,6 +11,10 @@ function App() {
   return (
     <div className="App">
       <Header />
+      <div className="contant-wrap">
+        <Cards 
+          topAnime={topAnime}/>
+      </div>
     </div>
   );
 }
