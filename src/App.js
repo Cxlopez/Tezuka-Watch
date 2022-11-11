@@ -11,15 +11,13 @@ function App() {
   const getTopAnime = async () => {
     const temp = await fetch(`https://api.jikan.moe/v4/anime?q=Naruto&limit=20`)
     const resData = await temp.json()
-    
-    console.log(resData);
+    setAnimeList(resData.data);
   }
 
   useEffect(() => {
     getTopAnime();
 
   }, [])
-  console.log(topAnime);
 
   return (
     <div className="App">
