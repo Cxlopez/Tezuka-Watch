@@ -5,7 +5,7 @@ function App() {
 
   const [animeList, setAnimeList] = useState([]); 
   const [topAnime, setTopAnime] = useState([]);
-  const [search, setSearch] = useEffect('');
+  const [search, setSearch] = useState('');
 
   return (
     <div className="App">
