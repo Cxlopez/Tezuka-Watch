@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import Cards from "./components/Cards";
+import NavBar from "./components/NavBar";
 import Header from "./components/Header";
 
 function App() {
@@ -8,11 +8,24 @@ function App() {
   const [topAnime, setTopAnime] = useState([]);
   const [search, setSearch] = useState('');
 
+  const getTopAnime = async () => {
+    const temp = await fetch(`https://api.jikan.moe/v4/anime?q=Naruto&limit=20`)
+    const resData = await temp.json()
+    
+    console.log(resData);
+  }
+
+  useEffect(() => {
+    getTopAnime();
+
+  }, [])
+  console.log(topAnime);
+
   return (
     <div className="App">
       <Header />
       <div className="contant-wrap">
-        <Cards 
+        <NavBar 
           topAnime={topAnime}/>
       </div>
     </div>
