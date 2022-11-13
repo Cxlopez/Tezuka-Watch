@@ -5,17 +5,17 @@ import Header from "./components/Header";
 function App() {
 
   const [animeList, setAnimeList] = useState([]); 
-  const [topAnime, setTopAnime] = useState([]);
+  const [animeData, setAnimeData] = useState([]);
   const [search, setSearch] = useState('');
 
-  const getTopAnime = async () => {
+  const getanimeData = async () => {
     const temp = await fetch(`https://api.jikan.moe/v4/anime?q=Naruto&limit=20`)
     const resData = await temp.json()
     setAnimeList(resData.data);
   }
 
   useEffect(() => {
-    getTopAnime();
+    getanimeData();
 
   }, [])
 
@@ -24,7 +24,7 @@ function App() {
       <Header />
       <div className="contant-wrap">
         <NavBar 
-          topAnime={topAnime}/>
+          animeData={animeData}/>
       </div>
     </div>
   );
