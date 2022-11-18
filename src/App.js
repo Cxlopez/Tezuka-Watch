@@ -6,10 +6,10 @@ function App() {
 
   const [animeList, setAnimeList] = useState([]); 
   const [animeData, setAnimeData] = useState([]);
-  const [search, setSearch] = useState('');
+  const [search, setSearch] = useState('Naruto');
 
   const getanimeData = async () => {
-    const temp = await fetch(`https://api.jikan.moe/v4/anime?q=Naruto&limit=20`)
+    const temp = await fetch(`https://api.jikan.moe/v4/anime?q=${search}&limit=20`)
     const resData = await temp.json()
     setAnimeList(resData.data);
   }
@@ -17,7 +17,7 @@ function App() {
   useEffect(() => {
     getanimeData();
 
-  }, [])
+  }, [search])
 
   return (
     <div className="App">
@@ -25,6 +25,10 @@ function App() {
       <div className="contant-wrap">
         <NavBar 
           animeData={animeData}/>
+      </div>
+      <div className="search-box">
+        <input type="search" placeholder="Search your anime"
+        onChange={(e) => setSearch(e.target.value)} />
       </div>
     </div>
   );

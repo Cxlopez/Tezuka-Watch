@@ -11,15 +11,6 @@ function NavBar() {
         <a href='#' target="_blank" rel="noreferrer">
           One Piece
         </a>
-        <a href='#' target="_blank" rel="noreferrer">
-          Bleach
-        </a>
-        <a href='#' target="_blank" rel="noreferrer">
-          Chainsaw Man
-        </a>
-        <a href='#' target="_blank" rel="noreferrer">
-          HunterxHunter
-        </a>
       </nav>
     </div>
   )
