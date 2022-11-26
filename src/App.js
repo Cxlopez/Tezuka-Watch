@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import NavBar from "./components/NavBar";
 import Header from "./components/Header";
+import AnimeList from "./components/AnimeList";
 
 function App() {
 
