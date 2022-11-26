@@ -20,6 +20,7 @@ function App() {
   }, [search])
 
   return (
+    <>
     <div className="App">
       <Header />
       <div className="contant-wrap">
@@ -31,6 +32,15 @@ function App() {
         onChange={(e) => setSearch(e.target.value)} />
       </div>
     </div>
+
+    <div className="container">
+      <div className="animeInfo">
+        <div className="row">
+          
+        </div>
+      </div>
+    </div>
+    </>
   );
 }
 
