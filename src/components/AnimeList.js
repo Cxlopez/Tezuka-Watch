@@ -1,13 +1,24 @@
 import React from 'react'
 import "../styles/styles.css"
 
-export default function AnimeList() {
+export default function AnimeList({ animeList }) {
   return (
-    <div className='card'>
-      <img src="https://cdn.myanimelist.net/images/anime/1208/94745l.jpg" alt="animeImg" />
-      <div className='anime-info'>
-        <h4>Full-Metal Alchemist</h4>
-      </div>
-    </div>
+    <>
+      {
+        animeList ? (
+          animeList.map((anime, index) => {
+            return (
+              <div className='card'>
+                <img src={anime.images.jpg.large_image_url} alt="animeImg" />
+                <div className='anime-info'>
+                  <h4>{anime.title}</h4>
+                </div>
+              </div>
+            )
+          })
+        ) : "Not Found"
+    }
+
+    </>
   )
 }
