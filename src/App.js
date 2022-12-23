@@ -9,7 +9,7 @@ function App() {
 
   const [animeList, setAnimeList] = useState([]); 
   const [animeData, setAnimeData] = useState([]);
-  const [search, setSearch] = useState('Naruto');
+  const [search, setSearch] = useState('');
 
   const getanimeData = async () => {
     const temp = await fetch(`https://api.jikan.moe/v4/anime?q=${search}&limit=20`)
@@ -22,6 +22,11 @@ function App() {
 
   }, [search])
 
+  function handleChange(event) {
+    const newValue = event.target.value;
+    setSearch(newValue);
+  }
+
   return (
     <>
     <div className="App">
@@ -32,7 +37,7 @@ function App() {
       </div>
       <div className="search-box">
         <input type="search" placeholder="Search your anime"
-        onChange={(e) => setSearch(e.target.value)} />
+        onChange={handleChange} value={search}/>
       </div>
     </div>
 
